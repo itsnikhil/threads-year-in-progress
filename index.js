@@ -31,7 +31,7 @@ const dayOfYear = getDayOfYear(today)
 const percentage = (dayOfYear / TOTAL_DAYS_IN_A_YEAR) * 100
 
 const message = `${today.getFullYear()} is ${percentage.toFixed(2)}% complete`
-const chartUrl = "https://raw.githubusercontent.com/itsnikhil/threads-year-in-progress/main/yearprogress.jpg"
+const chartUrl = "https://github.com/itsnikhil/threads-year-in-progress/raw/main/.github/cover.jpg"
 
 console.debug({ message, chartUrl })
 createThreadMessage(message, chartUrl)

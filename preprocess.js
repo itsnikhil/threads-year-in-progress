@@ -40,4 +40,4 @@ const percentage = (dayOfYear / TOTAL_DAYS_IN_A_YEAR) * 100
 const chartUrl = generateProgressChartUrl(percentage)
 
 // script should fail loudly to make sure pipeline break
-downloadFile(chartUrl, 'yearprogress.jpg')
+downloadFile(chartUrl, '.github/cover.jpg')
