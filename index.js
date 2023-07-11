@@ -18,7 +18,7 @@ const createThreadMessage = async (text, image = undefined) => {
 
     const result = await threadsAPI.publish({
       text,
-      // image,
+      image,
     })
     console.log('Result:', result)
   } catch (error) {
