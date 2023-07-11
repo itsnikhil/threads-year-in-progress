@@ -38,20 +38,16 @@ function createProgressBar(progress, total, width) {
  * @param {string} image link to image (optional)
  */
 const createThreadMessage = async (text, image = undefined) => {
-  try {
-    const threadsAPI = new ThreadsAPI({
-      username: process.env.INSTAGRAM_USERNAME, // Your username
-      password: process.env.INSTAGRAM_PASSWORD, // Your password
-    })
+  const threadsAPI = new ThreadsAPI({
+    username: process.env.INSTAGRAM_USERNAME, // Your username
+    password: process.env.INSTAGRAM_PASSWORD, // Your password
+  })
 
-    const result = await threadsAPI.publish({
-      text,
-      image,
-    })
-    console.log('Result:', result)
-  } catch (error) {
-    console.error('Failed to publish to threads', error)
-  }
+  const result = await threadsAPI.publish({
+    text,
+    image,
+  })
+  console.log('Result:', result)
 }
 
 const today = new Date()
