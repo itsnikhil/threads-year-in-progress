@@ -35,18 +35,14 @@ function createProgressBar(progress, total, width) {
 /**
  *
  * @param {string} message you want to publish upto 500 characters
- * @param {string} image link to image (optional)
  */
-const createThreadMessage = async (text, image = undefined) => {
+const createThreadMessage = async (text) => {
   const threadsAPI = new ThreadsAPI({
     username: process.env.INSTAGRAM_USERNAME, // Your username
     password: process.env.INSTAGRAM_PASSWORD, // Your password
   })
 
-  const result = await threadsAPI.publish({
-    text,
-    image,
-  })
+  const result = await threadsAPI.publish({ text })
   console.log('Result:', result)
 }
 
