@@ -20,17 +20,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Setup repo
         uses: actions/checkout@v2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: '18.x'
       - name: Publish thread message
         env:
           INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
           INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
         run: |
-          npm install
-          node index.js
+          npm ci
+          node .
