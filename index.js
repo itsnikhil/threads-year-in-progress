@@ -42,7 +42,7 @@ const createThreadMessage = async (text) => {
     username: process.env.INSTAGRAM_USERNAME,
     password: process.env.INSTAGRAM_PASSWORD,
     deviceID: process.env.THREADS_DEVICE_ID,
-    verbose: true,
+    verbose: false,
   })
 
   const result = await threadsAPI.publish({ text })
