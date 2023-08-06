@@ -33,6 +33,7 @@ jobs:
       - name: Publish thread message
         run: npm start
         env:
+          USER_ID: ${{ secrets.USER_ID }}
           THREADS_DEVICE_ID: ${{ secrets.THREADS_DEVICE_ID }}
           INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
           INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
