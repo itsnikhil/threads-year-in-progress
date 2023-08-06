@@ -38,8 +38,11 @@ function createProgressBar(progress, total, width) {
  */
 const createThreadMessage = async (text) => {
   const threadsAPI = new ThreadsAPI({
-    username: process.env.INSTAGRAM_USERNAME, // Your username
-    password: process.env.INSTAGRAM_PASSWORD, // Your password
+    userID: process.env.USER_ID,
+    username: process.env.INSTAGRAM_USERNAME,
+    password: process.env.INSTAGRAM_PASSWORD,
+    deviceID: process.env.THREADS_DEVICE_ID,
+    verbose: true,
   })
 
   const result = await threadsAPI.publish({ text })
