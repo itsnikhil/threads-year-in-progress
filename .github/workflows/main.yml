@@ -30,6 +30,7 @@ jobs:
           node-version: '18.x'
       - name: Publish thread message
         env:
+          THREADS_DEVICE_ID: ${{ secrets.THREADS_DEVICE_ID }}
           INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
           INSTAGRAM_PASSWORD: ${{ secrets.INSTAGRAM_PASSWORD }}
         run: |
