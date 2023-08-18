@@ -1,7 +1,19 @@
 require('dotenv').config()
 const { ThreadsAPI } = require('threads-api')
 
-const TOTAL_DAYS_IN_A_YEAR = 365
+/**
+ *
+ * @param {number} current year in 4 digit
+ * @returns {boolean} true when current year is a leap year
+ */
+const isLeapYear = (year) => ((year & 3) === 0 && ((year % 25) != 0 || (year & 15) == 0))
+
+/**
+ *
+ * @param {number} current year in 4 digit
+ * @returns {number} total number of days in that year
+ */
+const totalDaysInYear = (year) => isLeapYear(year) ? 366 : 365
 
 /**
  *
@@ -51,7 +63,7 @@ const createThreadMessage = async (text) => {
 
 const today = new Date()
 const dayOfYear = getDayOfYear(today)
-const percentage = (dayOfYear / TOTAL_DAYS_IN_A_YEAR) * 100
+const percentage = (dayOfYear / totalDaysInYear(today.getFullYear())) * 100
 const progressBarWidth = 30;
 const totalProgress = 100;
 const progressBarAscii = createProgressBar(percentage, totalProgress, progressBarWidth)
